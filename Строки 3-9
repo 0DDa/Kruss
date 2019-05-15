@@ -1,0 +1,29 @@
+#include "iostream"
+#include "string"
+using namespace std;
+int main()
+{
+	cout << "Enter str: " << endl;
+	string str, slovo;
+	string::size_type k = 0, pos = 0;
+	getline(cin, str);
+	str = str + " ";
+	k = str.find(" ", pos);
+	char x;
+	cin >> x;
+	while (k != string::npos)
+	{
+		slovo = str.substr(pos, k - pos);
+		if (slovo[0] == x && slovo[slovo.length() - 1] == x)
+		{
+			pos = k + 1;
+			cout << slovo << endl;
+			k = str.find(" ", pos);
+		}
+		else {
+			pos = k + 1;
+			k = str.find(" ", pos);
+		}
+	}
+	return 0;
+}
