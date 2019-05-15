@@ -1,0 +1,16 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main() {
+	char b;
+	cin >> b;
+    ifstream in("file.txt");
+    string data;
+    int num = 0;
+    while(in >> data) {
+        if(data[0]==b)
+            num++;
+    }
+    cout << num << endl;
+    return 0;
+}
