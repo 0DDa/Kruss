@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+int n;
+cin >> n;
+ofstream f("file.dat", ios::out | ios::trunc);
+int *a = new int [n];
+for (int i = 0; i <= n; i++)
+	{
+	a[i] = i;
+	f << a[i] << " ";
+	}
+f.close();
+ifstream g("file.dat");
+int *b = new int[n];
+while (!f.eof())
+{
+	for (int i = 0; i<= n; i++)
+	{
+		g >> b[i];
+		cout << b[i];
+	}
+}
+g.close();
+return 0;
+}
